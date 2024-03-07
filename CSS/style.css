@@ -1,0 +1,168 @@
+@import url(variables.css);
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background: var(--color-primary);
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: repeat(9, 1fr);
+    grid-template-areas: 
+    "menu menu menu menu menu menu menu menu menu menu menu menu"
+    "notification notification notification notification sales sales sales sales sales sales balance balance"
+    "notification notification notification notification sales sales sales sales sales sales balance balance"
+    "week week week week sales sales sales sales sales sales balance balance"
+    "week week week week sales sales sales sales sales sales devs devs"
+    "week week week week sales sales sales sales sales sales devs devs"
+    "product product product product product timeline timeline timeline timeline timeline timeline timeline"
+    "product product product product product timeline timeline timeline timeline timeline timeline timeline"
+    "product product product product product timeline timeline timeline timeline timeline timeline timeline"
+    ;
+    
+
+    width: 800px;
+    height: 600px;
+    margin: 15px auto;
+    background: var(--color-primary);
+    grid-gap: 8px;
+    
+}
+.container div{
+    border-radius: 5px;
+}
+.item_1{
+    grid-area: menu;
+    display: grid;
+    grid-template-columns: repeat(2,50%);
+}
+.item_1 {
+    background: var(--color-secundary);
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    
+}
+.item_1  li {
+    
+    margin: 0 10px;
+    margin-top: 21px;
+    list-style: none;
+    display: inline-block;
+    text-align: center;
+    
+}
+
+.item_1 input{
+    border: none;
+    font-size: 12px;
+    height: auto;
+    margin: 0;
+    outline: 0;
+    padding: 9px;
+    width: 100%;
+    font-family: sans-serif;
+    font-size: 14px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+    margin-bottom: 30px;
+}
+.imagen1{
+    width:50%;
+}
+.imagen2{
+    width: 50%;
+}
+.icono{
+    display: grid;
+    grid-template-columns: 15% 15% 70%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgb(137, 216, 249), rgb(215, 240, 101));
+    z-index: 10;
+}
+.item:nth-child(2) {
+    grid-column: span 1; /* Ocupa una columna completa (nuevo ancho%) */
+}
+
+.item_1 div {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.name{
+    
+    display: flex;
+    
+    flex-direction: column;
+}
+.name h1{
+    font-size: 19px;
+    
+}
+.name p{
+    font-size: 12px;
+    
+}
+.perfil img{
+    height: 35px;
+    position: absolute;
+    margin-left: 200px;
+    
+}
+
+.item_2{
+    background: rgb(135, 216, 249);
+    grid-area: notification;
+}
+.item_3{
+    background: orange;
+    grid-area: sales;
+}
+.item_4{
+    background: violet;
+    grid-area: balance;
+}
+
+.item_5{
+    background: salmon;
+    grid-area: week;
+}
+.item_6{
+    background: greenyellow;
+    grid-area: devs;
+}
+.item_7{
+    background: darkcyan;
+    grid-area: product;
+}
+.item_8{
+    background: hotpink;
+    grid-area: timeline;
+}
+
+@media (width < 800px){
+    .container{
+        width: 100%;
+        margin: 0;
+        padding: 0 10px;
+        padding-top: 5px;
+
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+        "menu menu"
+        "notification notification"
+        "sales balance"
+        "week week"
+        "devs devs"
+        "product product"
+        "timeline timeline"
+       ;
+    }
+}
